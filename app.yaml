@@ -1,0 +1,14 @@
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /_ah/mail/.+
+  script: helloworld.app
+  login: admin
+- url: /.*
+  script: helloworld.app
+
+inbound_services:
+- mail
